@@ -8,7 +8,7 @@ The goal of the project is twofold. Firstly, to build an end-to-end financial da
 
 # Methodology
 
-This project evaluates different approaches for forecasting portfolio volatility and assessing the reliability of resulting risk estimates. The workflow consists of data collection, portfolio construction, feature engineering, volatility forecasting, and VaR backtesting.
+This project evaluates different approaches for forecasting portfolio volatility and assessing the reliability of resulting risk estimates. The workflow consists of data collection, portfolio construction, feature engineering, volatility forecasting and VaR backtesting.
 
 ## Data and Portfolio Construction
 
