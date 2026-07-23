@@ -4,7 +4,74 @@ Project by Alexsey Chernichenko. July 2026.
 
 # Project Goal
 
+The goal of the project is twofold. Firstly, to build an end-to-end financial data pipeline that collects historical market data, stores it in a SQL database, performs exploratory data analysis and feature engineering, and finally develops statistical and machine learning models to forecast financial risk. Secondly, to evaluate whether increasingly sophisticated volatility forecasting models lead to more reliable market risk forecasts, as measured not only by prediction accuracy but also by regulatory backtesting tests.
+
 # Methodology
+
+This project evaluates different approaches for forecasting portfolio volatility and assessing the reliability of resulting risk estimates. The workflow consists of data collection, portfolio construction, feature engineering, volatility forecasting, and VaR backtesting.
+
+## Data and Portfolio Construction
+
+Historical daily price data was collected using `yfinance` for the period January 2000 to July 2026 (~27.5 years). The data was stored in a SQLite database and analysed using SQL and Python.
+
+Six assets were selected to create a diversified portfolio across multiple sectors:
+
+* NVDA
+* MSFT
+* JPM
+* UNH
+* AMZN
+* XOM
+
+Portfolio returns were calculated using equal asset weights. The assets and portfolio were analysed using statistical measures including return distributions, volatility, annualized volatility, correlations, skewness, and kurtosis.
+
+## Feature Engineering
+
+Daily logarithmic returns were calculated and used to construct forecasting features based only on historical information.
+
+The following features were generated:
+
+* lagged returns (`lag_return`)
+* exponentially weighted rolling volatility (`roll_vol`)
+* exponentially weighted rolling mean (`roll_mean`)
+* momentum
+* volatility ratio (`vol_ratio`)
+* volatility change (`vol_change`)
+
+The prediction target was future annualized realized volatility over a five-day horizon.
+
+## Volatility Forecasting
+
+The forecasting period covered 2021–2026. Seven models were evaluated:
+
+* Historical average volatility
+* Persistence model
+* Linear regression
+* Ridge regression
+* Random Forest
+* XGBoost
+* GARCH(1,1)
+
+The first two models were used as benchmarks, while the remaining models represented statistical and machine learning-based forecasting approaches.
+
+## Risk Estimation and Backtesting
+
+Forecasted volatility was used to calculate Value-at-Risk (VaR) and Expected Shortfall (ES). Model performance was evaluated using both volatility forecasting accuracy and risk metrics.
+
+Forecasting performance was measured using:
+
+* RMSE
+* MAE
+* Relative Error
+
+Risk performance was evaluated using:
+
+* VaR violation rate
+* Kupiec unconditional coverage test
+* Christoffersen independence test
+
+Additional analysis included feature importance evaluation for machine learning models and investigation of violation clustering during periods of changing market volatility.
+
 
 # Background
 
