@@ -16,13 +16,13 @@ Project by Alexsey Chernichenko. July 2026.
 
 <img width="1058" height="711" alt="Снимок экрана 2026-07-23 в 16 04 10" src="https://github.com/user-attachments/assets/c31c5772-d0b4-4440-ba93-17548dca517c" />
 
-<img width="1071" height="724" alt="Снимок экрана 2026-07-23 в 16 05 03" src="https://github.com/user-attachments/assets/52ea6905-05e0-4d87-84a8-6ff18100cb57" />
-
 <img width="1027" height="748" alt="Снимок экрана 2026-07-23 в 16 04 43" src="https://github.com/user-attachments/assets/ce8bfff1-a06b-4ede-b9cb-4ba43653a686" />
 
 <img width="937" height="700" alt="Снимок экрана 2026-07-23 в 16 05 50" src="https://github.com/user-attachments/assets/fa73e704-965e-41bc-a91e-bb1e58405084" />
 
 <img width="1100" height="698" alt="Снимок экрана 2026-07-23 в 16 05 22" src="https://github.com/user-attachments/assets/91cecffd-0efd-49ba-837d-0b8c549ef778" />
+
+<img width="1071" height="724" alt="Снимок экрана 2026-07-23 в 16 05 03" src="https://github.com/user-attachments/assets/52ea6905-05e0-4d87-84a8-6ff18100cb57" />
 
 | Asset |  Mean  | Volatility | Annual Volatility | Min    | Max   | Skew   | Kurtosis |
 | ----- | ------ | ---------- | ----------------- | ------ | ----- | ------ | -------- |
