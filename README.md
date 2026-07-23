@@ -14,14 +14,14 @@ This project evaluates different approaches for forecasting portfolio volatility
 
 Historical daily price data was collected using `yfinance` for the period January 2000 to July 2026 (~27.5 years). The data was stored in a SQLite database and analysed using SQL and Python.
 
-Six assets were selected to create a diversified portfolio across multiple sectors:
+Six assets were selected to create a diversified portfolio across multiple sectors. The selected companies represent different sectors, including semiconductors, technology, financial services, healthcare, consumer and energy.
 
-* NVDA
-* MSFT
-* JPM
-* UNH
-* AMZN
-* XOM
+* NVIDIA (NVDA)
+* Microsoft (MSFT)
+* JPMorgan Chase (JPM)
+* UnitedHealth Group (UNH)
+* Amazon (AMZN)
+* Exxon Mobil (XOM)
 
 Portfolio returns were calculated using equal asset weights. The assets and portfolio were analysed using statistical measures including return distributions, volatility, annualized volatility, correlations, skewness, and kurtosis.
 
@@ -33,24 +33,24 @@ The following features were generated:
 
 * lagged returns (`lag_return`)
 * exponentially weighted rolling volatility (`roll_vol`)
-* exponentially weighted rolling mean (`roll_mean`)
-* momentum
+* rolling mean (`roll_mean`)
+* momentum (`momentum`)
 * volatility ratio (`vol_ratio`)
 * volatility change (`vol_change`)
 
-The prediction target was future annualized realized volatility over a five-day horizon.
+The first four baseline features were generated for different time horizons such as 1, 5, 20 and 60 days. The last two features were derived from roll_vol_5 and roll_vol_60 metrics. The prediction target was future annualized realized volatility over a five-day horizon.
 
 ## Volatility Forecasting
 
 The forecasting period covered 2021–2026. Seven models were evaluated:
 
-* Historical average volatility
-* Persistence model
-* Linear regression
-* Ridge regression
-* Random Forest
-* XGBoost
-* GARCH(1,1)
+* Historical average volatility (`historical_average`)
+* Persistence model (`persistence`)
+* Linear regression (`linear_regression`)
+* Ridge regression (`ridge_regression`)
+* Random Forest (`random_forest`)
+* XGBoost (`xgboost`)
+* GARCH(1,1) (`garch`)
 
 The first two models were used as benchmarks, while the remaining models represented statistical and machine learning-based forecasting approaches.
 
@@ -60,9 +60,9 @@ Forecasted volatility was used to calculate Value-at-Risk (VaR) and Expected Sho
 
 Forecasting performance was measured using:
 
-* RMSE
-* MAE
-* Relative Error
+* Root Mean Squared Error (RMSE)
+* Mean Absolute Error (MAE)
+* Relative Error (RE)
 
 Risk performance was evaluated using:
 
@@ -71,7 +71,6 @@ Risk performance was evaluated using:
 * Christoffersen independence test
 
 Additional analysis included feature importance evaluation for machine learning models and investigation of violation clustering during periods of changing market volatility.
-
 
 # Background
 
