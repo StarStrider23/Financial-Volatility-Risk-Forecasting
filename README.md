@@ -39,9 +39,9 @@ Project by Alexsey Chernichenko. July 2026.
 
 <img width="1048" height="725" alt="Снимок экрана 2026-07-23 в 16 20 49" src="https://github.com/user-attachments/assets/70785c51-e81e-4e03-a97a-e2b37d11c9f9" />
 
-<img width="1075" height="742" alt="Снимок экрана 2026-07-23 в 16 26 57" src="https://github.com/user-attachments/assets/b8f31045-5865-4086-b180-9f2ae14d12af" />
-
 <img width="1080" height="723" alt="Снимок экрана 2026-07-23 в 16 40 35" src="https://github.com/user-attachments/assets/eb1a63af-91e6-4671-a387-42e97bfa9d77" />
+
+<img width="1075" height="742" alt="Снимок экрана 2026-07-23 в 16 26 57" src="https://github.com/user-attachments/assets/b8f31045-5865-4086-b180-9f2ae14d12af" />
 
 ### Persistence
 
