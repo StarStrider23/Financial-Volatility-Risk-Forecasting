@@ -72,7 +72,7 @@ Risk performance was evaluated using:
 
 Additional analysis included feature importance evaluation for machine learning models and investigation of violation clustering during periods of changing market volatility.
 
-Although a necessary level of background is given below, the reader may also familiarize oneself with the following project: https://github.com/StarStrider23/1-day-Value-at-Risk-Expected-Shortfall-Forecasting-Project. The project includes some further discussion on GARCH(1,1), VaR and ES.
+Although a necessary level of background is given below, the reader may also familiarize oneself with the following project: https://github.com/StarStrider23/1-day-Value-at-Risk-Expected-Shortfall-Forecasting-Project. The project includes some further discussion on GARCH(1,1), VaR/ES and Kupiec/Christoffersen tests.
 
 # Background
 
@@ -137,12 +137,11 @@ Expected Shortfall measures the average loss conditional on the VaR threshold be
 
 ## Model Evaluation
 
-Besides the error 
+Besides the violation rate and error metrics, the model evaluation is assessed through the **Kupiec** and **Christoffersen** tests. 
 
 The **Kupiec unconditional coverage test** evaluates whether the observed number of VaR violations is consistent with the selected confidence level.
 
-The **Christoffersen independence test** evaluates whether VaR violations occur independently over time. Passing the Kupiec test indicates correct long-run coverage, whereas passing the Christoffersen test additionally requires that violations do not occur in clusters. Together, these tests provide a comprehensive assessment of the reliability of the estimated market risk.
-
+The **Christoffersen independence test** evaluates whether VaR violations occur independently over time. Passing the Kupiec test indicates correct long-run coverage but passing the Christoffersen test additionally requires that violations do not occur in clusters. Together the tests provide a much more complete and comprehensive assessment of the reliability of the estimated market risk.
 
 # Structure
 
