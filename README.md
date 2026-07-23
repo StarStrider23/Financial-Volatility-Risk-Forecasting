@@ -12,6 +12,18 @@ Project by Alexsey Chernichenko. July 2026.
 
 # Results
 
+## Explaratory Data Analysis
+
+<img width="1071" height="724" alt="Снимок экрана 2026-07-23 в 16 05 03" src="https://github.com/user-attachments/assets/52ea6905-05e0-4d87-84a8-6ff18100cb57" />
+
+<img width="1027" height="748" alt="Снимок экрана 2026-07-23 в 16 04 43" src="https://github.com/user-attachments/assets/ce8bfff1-a06b-4ede-b9cb-4ba43653a686" />
+
+<img width="1058" height="711" alt="Снимок экрана 2026-07-23 в 16 04 10" src="https://github.com/user-attachments/assets/c31c5772-d0b4-4440-ba93-17548dca517c" />
+
+<img width="937" height="700" alt="Снимок экрана 2026-07-23 в 16 05 50" src="https://github.com/user-attachments/assets/fa73e704-965e-41bc-a91e-bb1e58405084" />
+
+<img width="1100" height="698" alt="Снимок экрана 2026-07-23 в 16 05 22" src="https://github.com/user-attachments/assets/91cecffd-0efd-49ba-837d-0b8c549ef778" />
+
 | Asset |  Mean  | Volatility | Annual Volatility | Min    | Max   | Skew   | Kurtosis |
 | ----- | ------ | ---------- | ----------------- | ------ | ----- | ------ | -------- |
 | NVDA  | 0.0011 | 0.037      | 0.585             | -0.434 | 0.354 | -0.209 | 12.981   |
@@ -20,6 +32,32 @@ Project by Alexsey Chernichenko. July 2026.
 | UNH   | 0.0006 | 0.020      | 0.320             | -0.253 | 0.298 | -0.531 | 23.015   |
 | AMZN  | 0.0006 | 0.030      | 0.481             | -0.285 | 0.296 | 0.419  | 13.105   |
 | XOM   | 0.0002 | 0.017      | 0.264             | -0.150 | 0.159 | -0.089 | 8.274    |
+
+## ???
+
+### Historical Average
+
+<img width="1075" height="742" alt="Снимок экрана 2026-07-23 в 16 26 57" src="https://github.com/user-attachments/assets/b8f31045-5865-4086-b180-9f2ae14d12af" />
+
+<img width="1048" height="725" alt="Снимок экрана 2026-07-23 в 16 20 49" src="https://github.com/user-attachments/assets/70785c51-e81e-4e03-a97a-e2b37d11c9f9" />
+
+<img width="1080" height="723" alt="Снимок экрана 2026-07-23 в 16 40 35" src="https://github.com/user-attachments/assets/eb1a63af-91e6-4671-a387-42e97bfa9d77" />
+
+### Persistence
+
+
+
+### Linear Regression
+
+### Ridge Regression
+
+### Random Forest
+
+### XGBoost
+
+### GARCH
+
+### Summary 
 
 |       Model        |  RMSE  |   MAE  |   RE   |  Violation rate |  Kupiec  |  Christoffersen |
 | ------------------ | ------ | ------ | ------ | --------------- | -------- | --------------- |
