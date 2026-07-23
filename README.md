@@ -81,8 +81,7 @@ Project by Alexsey Chernichenko. July 2026.
 
 <img width="1070" height="725" alt="Снимок экрана 2026-07-23 в 16 42 06" src="https://github.com/user-attachments/assets/04ccce93-0a98-42e4-bbb4-0ea011251e06" />
 
-<img width="1074" height="731" alt="Снимок экрана 2026-07-23 в 16 38 37" src="https://github.com/user-attachments/assets/96e0ced6-1343-4b80-b6c1-0d45929f7c2d" />
-
+<img width="1087" height="734" alt="Снимок экрана 2026-07-23 в 16 53 08" src="https://github.com/user-attachments/assets/b8d399f0-d82d-4dca-9886-04deec0ef614" />
 
 ### GARCH
 
