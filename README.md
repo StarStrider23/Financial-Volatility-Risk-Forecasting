@@ -85,7 +85,7 @@ The following features are considered:
 * **Lagged returns (`lag_return`)** represent previous daily returns and capture short-term dependencies in the return series.
 * **Rolling mean (`roll_mean`)** measures the average return over a moving window and provides information about recent market trends.
 * **Exponentially weighted rolling volatility (`roll_vol`)** similar to the rolling mean, but for volatility, however it is exponentially weighted which means that it assigns greater importance to more recent observations.
-* **Momentum** represents accumulated historical returns and is used to identify persistent upward or downward price movements.
+* **Momentum (`momentum`)** represents accumulated historical returns and is used to identify persistent upward or downward price movements.
 * **Volatility ratio (`vol_ratio`)** compares short-term and long-term volatility and can indicate transitions between different volatility regimes.
 * **Volatility change (`vol_change`)** measures the difference between short-term and long-term volatility and reflects the speed at which market uncertainty changes.
 
