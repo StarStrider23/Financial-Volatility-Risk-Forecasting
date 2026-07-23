@@ -42,7 +42,7 @@ The first four baseline features were generated for different time horizons such
 
 ## Volatility Forecasting
 
-The forecasting period covered 2021–2026. Seven models were evaluated:
+The test period lasted from 2000 to 2020 while the forecasting period covered 2021–2026. Seven models were evaluated:
 
 * Historical average volatility (`historical_average`)
 * Persistence model (`persistence`)
@@ -72,7 +72,77 @@ Risk performance was evaluated using:
 
 Additional analysis included feature importance evaluation for machine learning models and investigation of violation clustering during periods of changing market volatility.
 
+Although a necessary level of background is given below, the reader may also familiarize oneself with the following project: https://github.com/StarStrider23/1-day-Value-at-Risk-Expected-Shortfall-Forecasting-Project. The project includes some further discussion on GARCH(1,1), VaR and ES.
+
 # Background
+
+## Feature Engineering
+
+Forecasting future volatility requires transforming historical returns into informative explanatory variables. All features used in this project were constructed exclusively from past observations to avoid the bias related to future leakage.
+
+The following features are considered:
+
+* **Lagged returns (`lag_return`)** represent previous daily returns and capture short-term dependencies in the return series.
+* **Rolling mean (`roll_mean`)** measures the average return over a moving window and provides information about recent market trends.
+* **Exponentially weighted rolling volatility (`roll_vol`)** similar to the rolling mean, but for volatility, however it is exponentially weighted which means that it assigns greater importance to more recent observations.
+* **Momentum** represents accumulated historical returns and is used to identify persistent upward or downward price movements.
+* **Volatility ratio (`vol_ratio`)** compares short-term and long-term volatility and can indicate transitions between different volatility regimes.
+* **Volatility change (`vol_change`)** measures the difference between short-term and long-term volatility and reflects the speed at which market uncertainty changes.
+
+Using multiple rolling windows allows the models to capture both short-term market fluctuations and longer-term volatility behaviour.
+
+## Volatility Forecasting Models
+
+Several forecasting approaches are evaluated, ranging from simple benchmark methods to machine learning algorithms and classical econometric models.
+
+### Historical Average
+
+The historical average model forecasts future volatility using the average historical volatility observed during the training period. Although simple, it provides a useful benchmark for evaluating more advanced forecasting methods.
+
+### Persistence Model
+
+The persistence model assumes that future volatility equals the most recently observed volatility. Due to the strong persistence commonly observed in financial volatility, this model often provides a surprisingly competitive baseline.
+
+### Linear Regression
+
+Linear regression models future volatility as a linear combination of the engineered features. The model assumes a linear relationship between historical market characteristics and future realized volatility.
+
+### Ridge Regression
+
+Ridge regression extends linear regression by introducing L2 regularization. The regularization term reduces the influence of highly correlated features and helps improve model stability while reducing the risk of overfitting.
+
+### Random Forest
+
+Random Forest is an ensemble learning algorithm that combines predictions from multiple decision trees. By averaging the outputs of many trees, Random Forest can model nonlinear relationships while reducing prediction variance compared with a single decision tree.
+
+### XGBoost
+
+XGBoost (Extreme Gradient Boosting) is a gradient boosting algorithm that constructs decision trees sequentially. Each new tree attempts to correct the prediction errors of the previous ensemble, enabling the model to learn complex nonlinear relationships between historical features and future volatility. Regularization techniques incorporated within XGBoost also help control model complexity.
+
+### GARCH(1,1)
+
+GARCH (The Generalized Autoregressive Conditional Heteroskedasticity) model is one of the most widely used econometric models for volatility forecasting. Unlike machine learning models, GARCH directly models the conditional variance of financial returns by relating current volatility to previous volatility and previous return shocks. The model is particularly well suited for financial time series because it captures volatility clustering observed in asset returns. 
+
+## Portfolio Risk Measures
+
+Accurate volatility forecasts are essential for estimating portfolio risk. In this project, forecasted volatility is used to calculate two widely applied risk measures, i.e. Value-at-Risk (VaR) and Expected Shortfall (ES).
+
+### Value-at-Risk (VaR)
+
+Value-at-Risk estimates the maximum expected portfolio loss over a specified time horizon for a given confidence level. For example, a one-day 95% VaR of 2% indicates that losses greater than 2% are expected to occur on approximately 5% of trading days.
+
+### Expected Shortfall (ES)
+
+Expected Shortfall measures the average loss conditional on the VaR threshold being exceeded. Unlike VaR, ES provides information about the magnitude of extreme losses and is therefore considered a more informative measure of tail risk.
+
+## Model Evaluation
+
+Besides the error 
+
+The **Kupiec unconditional coverage test** evaluates whether the observed number of VaR violations is consistent with the selected confidence level.
+
+The **Christoffersen independence test** evaluates whether VaR violations occur independently over time. Passing the Kupiec test indicates correct long-run coverage, whereas passing the Christoffersen test additionally requires that violations do not occur in clusters. Together, these tests provide a comprehensive assessment of the reliability of the estimated market risk.
+
 
 # Structure
 
