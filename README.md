@@ -151,28 +151,37 @@ The test statistics follows a chi-square distribution with one degree of freedom
 
 ## Explaratory Data Analysis
 
+### Asset Prices Evolution
+
 The stock price plots illustrate the long-term development of the selected assets between 2000 and 2026. All assets exhibit an overall upward trend, although of course they differ considerably in both growth rate and volatility. Several periods of increased price fluctuations coincide with major market events, including the 2008 financial crisis, the COVID-19 pandemic and the market turbulence observed in 2022.
 
 <img width="1058" height="711" alt="Снимок экрана 2026-07-23 в 16 04 10" src="https://github.com/user-attachments/assets/c31c5772-d0b4-4440-ba93-17548dca517c" />
+
+### Log Return Histograms
 
 The histograms of daily logarithmic returns are centered close to zero, which is consistent with financial return series. Most observations are concentrated around the mean, while large positive and negative returns occur relatively infrequently. Daily volatility varies between approximately 1.7% (XOM) and 3.7% (NVDA).
 
 <img width="1027" height="748" alt="Снимок экрана 2026-07-23 в 16 04 43" src="https://github.com/user-attachments/assets/ce8bfff1-a06b-4ede-b9cb-4ba43653a686" />
 
+### Asset Correlation
+
 The correlation matrix shows positive correlations between all asset pairs, ranging from approximately 0.18 to 0.48. None of the correlations indicate an extremely strong linear relationship, suggesting that the selected assets provide a reasonable degree of diversification.
 
 <img width="937" height="700" alt="Снимок экрана 2026-07-23 в 16 05 50" src="https://github.com/user-attachments/assets/fa73e704-965e-41bc-a91e-bb1e58405084" />
 
+### Asset Box Plots
 
 The boxplots show that historic daily logarithmic returns are centered close to zero for all assets, with relatively small differences in median returns. Several extreme observations are visible, reflecting occasional periods of unusually high market volatility.
 
 <img width="1100" height="698" alt="Снимок экрана 2026-07-23 в 16 05 22" src="https://github.com/user-attachments/assets/91cecffd-0efd-49ba-837d-0b8c549ef778" />
 
+### Cumulative Investment Return Over Time
+
 The cumulative investment analysis highlights substantial differences in long-term asset performance. An initial investment of $1 in NVIDIA at the beginning of the sample period would have grown to approximately 2400$ by 2026 substantially outperforming the remaining assets, whose cumulative values remain at approximately $100.
 
 <img width="1071" height="724" alt="Снимок экрана 2026-07-23 в 16 05 03" src="https://github.com/user-attachments/assets/52ea6905-05e0-4d87-84a8-6ff18100cb57" />
 
-## Summary
+### Summary
 
 The summary table below further demonstates the differences between the selected assets. Mean daily log returns are positive but relatively small for all assets which is expected for daily data. NVIDIA exhibits the highest daily and annualized volatility, while Exxon Mobil is the least volatile asset in the portfolio.
 
