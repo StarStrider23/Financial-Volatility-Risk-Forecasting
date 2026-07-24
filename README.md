@@ -283,8 +283,6 @@ The VaR backtesting results present a different picture. Most models produce vio
 
 # Discussion
 
-# Discussion
-
 One of objectives of this project was to evaluate whether statistical and machine learning models can improve volatility forecasting and consequently provide more reliable portfolio risk estimates. Overall, the results demonstrate that all forecasting models were capable of capturing the general patterns of market volatility, although their performance varied depending on the evaluation criterion.
 
 From a forecasting perspective, the machine learning models generally outperformed the benchmark methods. Lookig at the table with the model performance, Linear Regression, Ridge Regression, Random Forest and XGBoost achieved the lowest RMSE and MAE values, indicating that the engineered features contained useful information for predicting future volatility. Feature engineering, particularly the inclusion of rolling volatility measures and volatility-based indicators, noticeably improved forecasting accuracy compared with using simple historical averages.
