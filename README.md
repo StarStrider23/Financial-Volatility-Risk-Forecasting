@@ -200,18 +200,20 @@ All assets display substantial kurtosis (8.3–23.0), indicating distributions w
 
 ### Summary 
 
-Volatility forecasting performance
-Figure X presents the predicted annualized volatility produced by the seven forecasting models together with the realized annualized volatility. The historical average model provides a constant volatility estimate and therefore serves primarily as a benchmark rather than a forecasting model. As expected, it fails to capture time-varying market conditions and exhibits the largest prediction errors.
-The remaining models successfully reproduce the general evolution of volatility throughout the test period. Linear Regression, Ridge Regression, Random Forest, XGBoost and GARCH all capture the major increases and decreases in volatility, although differences are observed in their responsiveness to rapid market changes. Overall, the machine learning models produce forecasts that closely follow the realized volatility, while the GARCH model generally generates more conservative forecasts and tends to overestimate volatility.
-This behaviour is also reflected in the relative error values shown in Table X. Most models exhibit a positive average relative error, indicating a tendency to overpredict future volatility. Such behaviour is particularly pronounced for the GARCH model, whereas the regression-based approaches produce the smallest average prediction errors.
-VaR violations
-Figure Y compares the predicted Value-at-Risk with realized portfolio returns and highlights observations where realized losses exceeded the estimated VaR threshold. Although violations occur throughout the testing period, they are not uniformly distributed over time. Instead, most violations are concentrated during periods of elevated market uncertainty, particularly throughout 2022 and between mid-2024 and mid-2025.
-The rolling 60-day violation rate shown in Figure Z confirms this behaviour. Rather than fluctuating randomly around the expected violation rate, all models experience periods with substantially increased violation frequencies followed by relatively calm periods. This clustering suggests that the forecasting models do not adapt sufficiently quickly to abrupt changes in market volatility.
-Quantitative comparison
-Table X summarizes the forecasting and backtesting results for all models.
+For each of the models, there's a designated result subsection with three figures. Figure 1 presents the predicted annualized volatility together with the realized annualized volatility. Figure 2 compares the predicted Value-at-Risk with realized portfolio returns and marks observations where realized losses exceeded the estimated VaR threshold. Finally, figure 3 shows the rolling 60-day violation rate across the years.
+
+Overall, the models successfully reproduce the general evolution of volatility throughout the test period and capture the major patterns in volatility. The only model which fails to do it is the historical average model which serves primarily as a benchmark rather than a forecasting model since it provides a constant volatility estimate across the test period. Therefore, it fails to capture time-varying market conditions and exhibits the largest prediction errors. 
+
+Although violations occur throughout the testing period, they are not uniformly distributed over time. Instead, most violations are concentrated during periods of elevated market uncertainty, particularly throughout 2022 and between mid-2024 and mid-2025.
+
+The rolling 60-day violation rate shown confirms this behaviour. Rather than fluctuating randomly around the expected violation rate, all models experience periods with substantially increased violation frequencies followed by relatively calm periods.
+
+Table below summarizes the forecasting and backtesting results for all models.
+
 From a forecasting perspective, the machine learning models achieve the lowest prediction errors. Linear Regression and Ridge Regression obtain the smallest RMSE and MAE values, closely followed by Random Forest and XGBoost. GARCH performs similarly to the persistence benchmark but exhibits noticeably larger relative error due to its tendency to overestimate volatility.
-The VaR backtesting results present a different picture. Most models produce violation rates close to the expected 5%, allowing several of them to satisfy the Kupiec unconditional coverage test. However, none of the models pass the Christoffersen independence test, with test statistics substantially exceeding the critical value of 3.841. This indicates that although the overall number of VaR violations is generally appropriate, the violations occur in clusters rather than independently.
-These findings suggest that minimizing volatility forecasting error alone is insufficient to guarantee reliable risk forecasts. Even models that closely track realized volatility struggle to adapt during periods of rapidly changing market conditions, resulting in clustered VaR violations and rejection of the independence hypothesis.
+
+The VaR backtesting results present a different picture. Most models produce violation rates close to the expected 5%, allowing several of them to satisfy the Kupiec unconditional coverage test. However, none of the models pass the Christoffersen independence test, with test statistics substantially exceeding the critical value of 3.841. 
+
 
 |       Model        |  RMSE  |   MAE  |   RE   |  Violation rate |  Kupiec  |  Christoffersen |
 | ------------------ | ------ | ------ | ------ | --------------- | -------- | --------------- |
