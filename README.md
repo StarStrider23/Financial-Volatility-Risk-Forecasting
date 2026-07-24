@@ -196,7 +196,32 @@ All assets display substantial kurtosis (8.3–23.0), indicating distributions w
 | AMZN  | 0.0006 | 0.030      | 0.481             | -0.285 | 0.296 | 0.419  | 13.105   |
 | XOM   | 0.0002 | 0.017      | 0.264             | -0.150 | 0.159 | -0.089 | 8.274    |
 
-## ???
+## Volatility & VaR Forecasting
+
+### Summary 
+
+Volatility forecasting performance
+Figure X presents the predicted annualized volatility produced by the seven forecasting models together with the realized annualized volatility. The historical average model provides a constant volatility estimate and therefore serves primarily as a benchmark rather than a forecasting model. As expected, it fails to capture time-varying market conditions and exhibits the largest prediction errors.
+The remaining models successfully reproduce the general evolution of volatility throughout the test period. Linear Regression, Ridge Regression, Random Forest, XGBoost and GARCH all capture the major increases and decreases in volatility, although differences are observed in their responsiveness to rapid market changes. Overall, the machine learning models produce forecasts that closely follow the realized volatility, while the GARCH model generally generates more conservative forecasts and tends to overestimate volatility.
+This behaviour is also reflected in the relative error values shown in Table X. Most models exhibit a positive average relative error, indicating a tendency to overpredict future volatility. Such behaviour is particularly pronounced for the GARCH model, whereas the regression-based approaches produce the smallest average prediction errors.
+VaR violations
+Figure Y compares the predicted Value-at-Risk with realized portfolio returns and highlights observations where realized losses exceeded the estimated VaR threshold. Although violations occur throughout the testing period, they are not uniformly distributed over time. Instead, most violations are concentrated during periods of elevated market uncertainty, particularly throughout 2022 and between mid-2024 and mid-2025.
+The rolling 60-day violation rate shown in Figure Z confirms this behaviour. Rather than fluctuating randomly around the expected violation rate, all models experience periods with substantially increased violation frequencies followed by relatively calm periods. This clustering suggests that the forecasting models do not adapt sufficiently quickly to abrupt changes in market volatility.
+Quantitative comparison
+Table X summarizes the forecasting and backtesting results for all models.
+From a forecasting perspective, the machine learning models achieve the lowest prediction errors. Linear Regression and Ridge Regression obtain the smallest RMSE and MAE values, closely followed by Random Forest and XGBoost. GARCH performs similarly to the persistence benchmark but exhibits noticeably larger relative error due to its tendency to overestimate volatility.
+The VaR backtesting results present a different picture. Most models produce violation rates close to the expected 5%, allowing several of them to satisfy the Kupiec unconditional coverage test. However, none of the models pass the Christoffersen independence test, with test statistics substantially exceeding the critical value of 3.841. This indicates that although the overall number of VaR violations is generally appropriate, the violations occur in clusters rather than independently.
+These findings suggest that minimizing volatility forecasting error alone is insufficient to guarantee reliable risk forecasts. Even models that closely track realized volatility struggle to adapt during periods of rapidly changing market conditions, resulting in clustered VaR violations and rejection of the independence hypothesis.
+
+|       Model        |  RMSE  |   MAE  |   RE   |  Violation rate |  Kupiec  |  Christoffersen |
+| ------------------ | ------ | ------ | ------ | --------------- | -------- | --------------- |
+| historical_average | 0.0988 | 0.0825 | 0.505  |     0.0371      |  5.223   |     125.411     |
+|     persistence    | 0.0583 | 0.0422 | 0.113  |     0.0488      |  0.0421  |     113.247     |
+|  linear_regression | 0.0496 | 0.0352 | 0.0623 |     0.0575      |  1.570   |     138.063     |
+|  ridge_regression  | 0.0497 | 0.0353 | 0.0622 |     0.0590      |  2.217   |     139.684     |
+|  random_forest     | 0.0507 | 0.0361 | 0.0800 |     0.0539      |  0.428   |     144.441     |
+|     xgboost        | 0.0530 | 0.0376 | 0.0544 |     0.0626      |  4.288   |     127.321     |
+|      garch         | 0.0574 | 0.0432 | 0.171  |     0.0444      |  0.931   |     136.229     |
 
 ### Historical Average
 
@@ -253,18 +278,6 @@ All assets display substantial kurtosis (8.3–23.0), indicating distributions w
 <img width="1069" height="728" alt="Снимок экрана 2026-07-23 в 16 42 28" src="https://github.com/user-attachments/assets/cec152a9-3dc9-43e0-97f1-94ba3378b202" />
 
 <img width="1074" height="731" alt="Снимок экрана 2026-07-23 в 16 38 37" src="https://github.com/user-attachments/assets/d84b77fc-ac05-40d7-abe8-6de96779b0dd" />
-
-### Summary 
-
-|       Model        |  RMSE  |   MAE  |   RE   |  Violation rate |  Kupiec  |  Christoffersen |
-| ------------------ | ------ | ------ | ------ | --------------- | -------- | --------------- |
-| historical_average | 0.0988 | 0.0825 | 0.505  |     0.0371      |  5.223   |     125.411     |
-|     persistence    | 0.0583 | 0.0422 | 0.113  |     0.0488      |  0.0421  |     113.247     |
-|  linear_regression | 0.0496 | 0.0352 | 0.0623 |     0.0575      |  1.570   |     138.063     |
-|  ridge_regression  | 0.0497 | 0.0353 | 0.0622 |     0.0590      |  2.217   |     139.684     |
-|  random_forest     | 0.0507 | 0.0361 | 0.0800 |     0.0539      |  0.428   |     144.441     |
-|     xgboost        | 0.0530 | 0.0376 | 0.0544 |     0.0626      |  4.288   |     127.321     |
-|      garch         | 0.0574 | 0.0432 | 0.171  |     0.0444      |  0.931   |     136.229     |
 
 # Discussion
 
