@@ -143,7 +143,7 @@ The **Kupiec unconditional coverage test** evaluates whether the observed number
 
 The **Christoffersen independence test** evaluates whether VaR violations occur independently over time. Passing the Kupiec test indicates correct long-run coverage but passing the Christoffersen test additionally requires that violations do not occur in clusters. Together the tests provide a much more complete and comprehensive assessment of the reliability of the estimated market risk.
 
-The test statistics follows a chi-square distribution with one degree of freedom, i.e. $\xi^2(1)$. So, at the conventional 5% significance level which is also used in this project, a model passes the tests if both test results are < 3.841, which is the 95th percentile of the chi-square distribution.
+The test statistics follows a chi-square distribution with one degree of freedom, i.e. $\chi^2(1)$. So, at the conventional 5% significance level which is also used in this project, a model passes the tests if both test results are < 3.841, which is the 95th percentile of the chi-square distribution.
 
 # Structure
 
