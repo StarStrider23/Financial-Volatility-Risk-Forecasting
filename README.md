@@ -283,4 +283,30 @@ The VaR backtesting results present a different picture. Most models produce vio
 
 # Discussion
 
+# Discussion
+
+One of objectives of this project was to evaluate whether statistical and machine learning models can improve volatility forecasting and consequently provide more reliable portfolio risk estimates. Overall, the results demonstrate that all forecasting models were capable of capturing the general patterns of market volatility, although their performance varied depending on the evaluation criterion.
+
+From a forecasting perspective, the machine learning models generally outperformed the benchmark methods. Lookig at the table with the model performance, Linear Regression, Ridge Regression, Random Forest and XGBoost achieved the lowest RMSE and MAE values, indicating that the engineered features contained useful information for predicting future volatility. Feature engineering, particularly the inclusion of rolling volatility measures and volatility-based indicators, noticeably improved forecasting accuracy compared with using simple historical averages.
+
+However, the backtesting results reveal that improved prediction accuracy did not necessarily translate into improved risk estimation. While several models produced VaR violation rates close to the expected 5% confidence level and therefore satisfied the Kupiec test, none of the models passed the Christoffersen test. In fact, each model produced a result that substantially exceeded the critical value of 3.841. This indicates that although the overall number of VaR violations is generally appropriate, the violations occur in clusters rather than independently. The rolling violation rate and violation plots further showed that exceedances tended to cluster during periods of elevated market uncertainty, particularly throughout 2022 and between mid-2024 and mid-2025.
+
+These findings suggest that the forecasting models adapted too slowly to abrupt changes in market conditions. During relatively stable periods, the models produced more accurate volatility forecasts on average, but when volatility increased rapidly they consistently underestimated the speed of adjustment, resulting in multiple consecutive VaR violations. Conversely, after periods of high volatility, several models (especially GARCH) continued to predict elevated volatility even after market conditions had begun to normalize, leading to a tendency to overestimate future risk.
+
+The GARCH model deserves particular attention. Although it is specifically designed for volatility forecasting and successfully captured volatility clustering, its forecasts were generally more conservative than those of the machine learning models. This behaviour resulted in relatively low violation rates but larger forecasting errors (relative error in particaular) due to systematic overprediction of volatility. In contrast, the regression models produced more accurate point forecasts while still failing to eliminate clustered VaR violations.
+
+One explanation for these results is that the feature set, although informative, may not fully capture abrupt structural changes in financial markets. The engineered features describe historical return behaviour but of course do not explicitly account for external factors such as macroeconomic announcements, monetary policy decisions, geopolitical events or market sentiment. Consequently, the models rely almost entirely on historical price information and therefore react only after changes in volatility have already occurred.
+
+Another important comment shoudl be made about the assumption of normally distributed returns used in the VaR calculation. The exploratory analysis demonstrated substantial kurtosis across all assets, indicating that extreme returns occur more frequently than predicted by a normal distribution. This mismatch between the assumed and empirical return distributions likely contributes to the observed clustering of VaR violations during periods of market stress.
+
+Despite these limitations, the project demonstrates that machine learning techniques can provide competitive volatility forecasts using relatively simple historical features. More importantly, it clearly shows that forecasting accuracy alone is insufficient when evaluating financial risk models. Reliable risk management requires not only accurate volatility predictions but also stable VaR performance under changing market conditions.
+
 # Conclusion
+
+This project developed a framework for forecasting portfolio volatility and evaluating the resulting market risk estimates using both statistical and machine learning approaches. Historical market data covering the period from 2000 to 2026 was used to construct a diversified portfolio, engineer predictive features, forecast future volatility and estimate Value-at-Risk and Expected Shortfall.
+
+Seven forecasting methods were evaluated, including benchmark models, regression models, machine learning algorithms and a GARCH(1,1) model. The machine learning models generally achieved the lowest forecasting errors, demonstrating that historical volatility characteristics contain useful predictive information. In particular, linear regression, ridge regression and tree-based methods consistently outperformed the historical average benchmark.
+
+However, the backtesting results showed that lower forecasting errors did not necessarily produce more reliable risk forecasts. Although several models generated approximately the expected number of VaR violations and passed the Kupiec test, every model failed the Christoffersen independence test by a lot. The observed clustering of violations indicates that all forecasting approaches struggled to adapt quickly to periods of rapidly changing market volatility.
+
+Overall, the results suggest that volatility forecasting and financial risk forecasting should not be viewed as equivalent problems. Accurate volatility prediction represents an important component of market risk estimation, but additional modelling improvements are required before reliable VaR forecasts can be achieved during periods of elevated market uncertainty.
