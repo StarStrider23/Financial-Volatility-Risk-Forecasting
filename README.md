@@ -147,6 +147,8 @@ The test statistics follows a chi-square distribution with one degree of freedom
 
 # Structure
 
+The eda folder contains the functions that are used for te Exploratory Data Analysis (asset price histories, histograms, correlation heat map, etc). The evaluation folder contains a file with 3 error functions (RMSE, MAE and RE), a file with tests (Kupiec and Christoffersen) and finally, a file with 2 functions that compute violations and violation rate. The portfolio folder includes a file that has 2 functions: a functions that downloads asset price data and a function that creates a weighted portfolio. Then, the var_es folder includes the function that computes VaR and ES at a given confidence level. Finally, the main.py file ties everything together and execute the workflow. It contains all the results that are presented further. 
+
 # Results
 
 ## Explaratory Data Analysis
