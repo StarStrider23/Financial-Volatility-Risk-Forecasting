@@ -204,7 +204,7 @@ For each of the models, there's a designated result subsection with three figure
 
 Overall, the models successfully reproduce the general evolution of volatility throughout the test period and capture the major patterns in volatility. The only model which fails to do it is the historical average model which serves primarily as a benchmark rather than a forecasting model since it provides a constant volatility estimate across the test period. Therefore, it fails to capture time-varying market conditions and exhibits the largest prediction errors. 
 
-Although violations occur throughout the testing period, they are not uniformly distributed over time. Instead, most violations are concentrated during periods of elevated market uncertainty, particularly throughout 2022 and between mid-2024 and mid-2025.
+Although violations occur throughout the testing period, they are not uniformly distributed over time. Instead, most violations are concentrated during periods of elevated market uncertainty, particularly throughout 2022 and between mid-2024 and beginning of 2026.
 
 The rolling 60-day violation rate shown confirms this behaviour. Rather than fluctuating randomly around the expected violation rate, all models experience periods with substantially increased violation frequencies followed by relatively calm periods.
 
