@@ -277,7 +277,7 @@ The VaR backtesting results present a different picture. Most models produce vio
 
 <img width="1087" height="734" alt="Снимок экрана 2026-07-23 в 16 53 08" src="https://github.com/user-attachments/assets/b8d399f0-d82d-4dca-9886-04deec0ef614" />
 
-### GARCH
+### GARCH(1,1)
 
 <img width="1027" height="723" alt="Снимок экрана 2026-07-23 в 16 38 18" src="https://github.com/user-attachments/assets/64b1d0fc-ec0e-46b3-9ec4-44d9a216a0c2" />
 
